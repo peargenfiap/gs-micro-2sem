@@ -48,8 +48,8 @@ public class ObjetivosServiceImpl implements ObjetivosServiceUseCase {
 	private ObjetivoGeral buildGeneralObjective(Ods ods) {
 		ObjetivoGeral generalObjective = new ObjetivoGeral();
 		generalObjective.setId(ods.getOdsKey());
-		generalObjective.setObjetivos(constructObjective(ods));
-		generalObjective.setIndicadores(findIndicators(ods.getOdsKey()));
+		generalObjective.setObjetivos(this.constructObjective(ods));
+		generalObjective.setIndicadores(this.findIndicators(ods.getOdsKey()));
 		return generalObjective;
 	}
 

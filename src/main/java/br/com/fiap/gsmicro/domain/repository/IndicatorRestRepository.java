@@ -11,4 +11,5 @@ public interface IndicatorRestRepository extends JpaRepository<Indicator, String
 	// Método para buscar Indicadores pelo OdsKey
 	List<Indicator> findByOdsKey(String odsKey);
 
+	List<Indicator> findByIndicatorKey(String indicatorKey);
 }

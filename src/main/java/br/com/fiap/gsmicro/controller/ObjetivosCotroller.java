@@ -12,7 +12,7 @@ import br.com.fiap.gsmicro.domain.model.ObjetivoGeral;
 import br.com.fiap.gsmicro.domain.service.impl.ObjetivosServiceImpl;
 
 @RestController
-@RequestMapping(("/v1/objetivos"))
+@RequestMapping("/v1/objetivos")
 public class ObjetivosCotroller {
 
 	@Autowired
