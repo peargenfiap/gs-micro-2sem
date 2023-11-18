@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.gsmicro.controller.usecase.IndicatorUseCase;
 import br.com.fiap.gsmicro.domain.entity.Indicator;
 import br.com.fiap.gsmicro.domain.model.IndicadorResponseDTO;
 import br.com.fiap.gsmicro.domain.repository.IndicatorRestRepository;
@@ -20,7 +21,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/v1/indicator")
-public class IndicatorController {
+public class IndicatorController implements IndicatorUseCase {
 
 	@Autowired
 	private IndicatorRestRepository indicatorRepository;

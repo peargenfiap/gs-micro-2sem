@@ -15,6 +15,16 @@ public class IndicadoresServiceImpl implements IndicadoresServiceUseCase {
 	@Autowired
 	private IndicatorDAO indicadorDAO;
 	
+	/**
+	 * Recupera uma lista de indicadores com base no ID fornecido.
+	 * 
+	 * Este método consulta o DAO para obter indicadores correspondentes ao ID especificado.
+	 * Ele retorna uma lista de objetos {@link IndicadorResponseDTO}, que contém informações como o ano e o consumo.
+	 * 
+	 * @param id O ID do indicador a ser buscado. Este ID é usado para filtrar os indicadores na consulta ao banco de dados.
+	 * @return Uma lista de {@link IndicadorResponseDTO} representando os indicadores encontrados. Se nenhum indicador for encontrado, retorna uma lista vazia.
+	 * @throws DataAccessException Se ocorrer um erro durante a comunicação com o banco de dados. (Nota: dependendo do framework ou biblioteca que você está usando, você pode querer detalhar os tipos específicos de exceções que podem ser lançadas).
+	 */
 	@Override
 	public List<IndicadorResponseDTO> obterIndicadores(String id) {
 		List<IndicadorResponseDTO> indicadores = indicadorDAO.obterIndicadores(id);
@@ -22,5 +32,4 @@ public class IndicadoresServiceImpl implements IndicadoresServiceUseCase {
 		return indicadores;
 	}
 
-	
 }
