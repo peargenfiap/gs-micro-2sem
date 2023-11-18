@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.gsmicro.controller.usecase.OdsUseCase;
 import br.com.fiap.gsmicro.domain.entity.Ods;
 import br.com.fiap.gsmicro.domain.repository.OdsRestRepository;
 import jakarta.transaction.Transactional;
@@ -17,7 +18,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/v1/ods")
-public class OdsController {
+public class OdsController implements OdsUseCase {
 
 	@Autowired
 	private OdsRestRepository odsRepository;
@@ -35,4 +36,4 @@ public class OdsController {
 		return ResponseEntity.ok(savedOds);
 	}
 
-	}
+}
