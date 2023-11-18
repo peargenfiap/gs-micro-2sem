@@ -21,7 +21,7 @@ public class Consume {
 
 	@Id
 	@Column(name = "ConsumeKey")
-	private String consumeKey;
+	private Long consumeKey;
 	@Column(name = "IndicatorKey")
     private String indicatorKey;
 	@Column(name = "ConsumeYear")
