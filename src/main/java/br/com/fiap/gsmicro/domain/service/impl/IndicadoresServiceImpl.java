@@ -1,8 +1,10 @@
 package br.com.fiap.gsmicro.domain.service.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import br.com.fiap.gsmicro.domain.dao.IndicatorDAO;
@@ -27,7 +29,11 @@ public class IndicadoresServiceImpl implements IndicadoresServiceUseCase {
 	 */
 	@Override
 	public List<IndicadorResponseDTO> obterIndicadores(String id) {
-		List<IndicadorResponseDTO> indicadores = indicadorDAO.obterIndicadores(id);
+		List<Object[]> results = indicadorDAO.obterIndicadores(id);
+
+		List<IndicadorResponseDTO> indicadores = results.stream()
+				.map(IndicadorResponseDTO::from)
+				.collect(Collectors.toList());
 		
 		return indicadores;
 	}

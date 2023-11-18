@@ -1,11 +1,9 @@
 package br.com.fiap.gsmicro.domain.dao;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.fiap.gsmicro.domain.model.IndicadorResponseDTO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
@@ -15,7 +13,7 @@ public class IndicatorDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public List<IndicadorResponseDTO> obterIndicadores(String id) {
+	public List<Object[]> obterIndicadores(String id) {
 		String sql = "SELECT  CONSUME.CONSUME_YEAR as ano, "
 				+ "           CONSUME.CONSUME_QUANTITY as consumo"
 				+ " FROM CONSUME CONSUME "
@@ -30,11 +28,7 @@ public class IndicatorDAO {
 					.setParameter("id", id)
 					.getResultList();
 
-		List<IndicadorResponseDTO> indicadores = results.stream()
-				.map(IndicadorResponseDTO::from)
-				.collect(Collectors.toList());
-
-		return indicadores;
+		return results;
 	}
 	
 }
