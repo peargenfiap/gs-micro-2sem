@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.gsmicro.controller.usecase.ConsumeUseCase;
 import br.com.fiap.gsmicro.domain.entity.Consume;
 import br.com.fiap.gsmicro.domain.repository.ConsumeRestRepository;
 
 @RestController
 @RequestMapping("/v1/consume")
-public class ConsumeController {
+public class ConsumeController implements ConsumeUseCase {
 
 	@Autowired
 	private ConsumeRestRepository consumeRepository;
