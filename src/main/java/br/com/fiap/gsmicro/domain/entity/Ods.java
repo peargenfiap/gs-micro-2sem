@@ -1,5 +1,6 @@
 package br.com.fiap.gsmicro.domain.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -19,8 +20,11 @@ import lombok.ToString;
 public class Ods {
 
 	@Id
+	@Column(name = "OdsKey")
 	private String odsKey;
+	@Column(name = "GlobalObjective")
 	private String globalObjective;
+	@Column(name = "BrazilObjective")
 	private String brazilObjective;
 	
 }
