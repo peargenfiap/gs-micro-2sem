@@ -1,4 +1,4 @@
-package br.com.fiap.gsmicro.controller;
+package br.com.fiap.gsmicro.controller.impl;
 
 import java.util.List;
 

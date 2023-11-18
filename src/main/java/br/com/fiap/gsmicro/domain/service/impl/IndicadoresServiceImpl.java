@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.com.fiap.gsmicro.domain.dao.IndicatorDAO;
+import br.com.fiap.gsmicro.domain.dao.impl.IndicatorDAO;
 import br.com.fiap.gsmicro.domain.model.IndicadorResponseDTO;
 import br.com.fiap.gsmicro.domain.service.usecase.IndicadoresServiceUseCase;
 

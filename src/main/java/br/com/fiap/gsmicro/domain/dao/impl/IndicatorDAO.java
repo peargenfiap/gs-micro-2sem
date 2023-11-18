@@ -1,14 +1,15 @@
-package br.com.fiap.gsmicro.domain.dao;
+package br.com.fiap.gsmicro.domain.dao.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.fiap.gsmicro.domain.dao.usecase.IndicatorDAOUseCase;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 @Repository
-public class IndicatorDAO {
+public class IndicatorDAO implements IndicatorDAOUseCase {
 
 	@PersistenceContext
 	private EntityManager entityManager;
