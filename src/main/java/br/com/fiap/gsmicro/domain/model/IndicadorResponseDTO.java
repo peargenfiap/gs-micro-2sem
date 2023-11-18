@@ -12,8 +12,14 @@ import lombok.ToString;
 @Setter
 @ToString
 public class IndicadorResponseDTO {
-	
+
 	private String ano;
 	private String consumo;
+
+	public static IndicadorResponseDTO from(Object[] result) {
+		String ano = String.valueOf(result[0]);
+		String consumo = String.valueOf(result[1]);
+		return new IndicadorResponseDTO(ano, consumo);
+	}
 
 }

@@ -1,6 +1,7 @@
 package br.com.fiap.gsmicro.domain.dao;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -18,18 +19,22 @@ public class IndicatorDAO {
 		String sql = "SELECT  CONSUME.CONSUME_YEAR as ano, "
 				+ "           CONSUME.CONSUME_QUANTITY as consumo"
 				+ " FROM CONSUME CONSUME "
-				+ " INNER JOIN INDICATOR INDICATOR "
-				+ " ON CONSUME.INDICATOR_KEY = INDICATOR.INDICATOR_KEY "
-				+ " WHERE INDICATOR.INDICATOR_KEY = :id";
+				+ " 	INNER JOIN INDICATOR INDICATOR "
+				+ " 	ON CONSUME.INDICATOR_KEY = INDICATOR.INDICATOR_KEY "
+				+ " WHERE INDICATOR.INDICATOR_KEY = :id "
+				+ " 	ORDER BY 1 ASC";
 
 		@SuppressWarnings("unchecked")
-		List<IndicadorResponseDTO> indicadores = entityManager
-				.createNativeQuery(sql)
-				.setParameter("id", id)
-				.getResultList();
+		List<Object[]> results = entityManager
+					.createNativeQuery(sql)
+					.setParameter("id", id)
+					.getResultList();
+
+		List<IndicadorResponseDTO> indicadores = results.stream()
+				.map(IndicadorResponseDTO::from)
+				.collect(Collectors.toList());
 
 		return indicadores;
 	}
-	
 	
 }
