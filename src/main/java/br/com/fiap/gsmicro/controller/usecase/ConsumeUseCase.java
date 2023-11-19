@@ -31,4 +31,13 @@ public interface ConsumeUseCase {
 	@ResponseStatus(HttpStatus.OK)
 	public abstract ResponseEntity<List<Consume>> obterListaConsume();
 	
+	@Operation(summary = "Lista todos os consumes a partir da chave do indicadotr.",
+			description = "Vai retornar todos os consumes a partir da chave do indicadotr.",
+			tags = { "Consumes" })
+	@ApiResponses(value = {
+	@ApiResponse(responseCode = "200", description = "Operação realizada com sucesso", content = @Content(schema = @Schema(implementation = ResponseEntity.class)))})
+	@PostMapping(value = "/", consumes = "multipart/form-data")
+	@ResponseStatus(HttpStatus.OK)
+	public abstract ResponseEntity<List<Consume>> obterListaConsumePorIdIndicator(String indicatorKey);
+	
 }
