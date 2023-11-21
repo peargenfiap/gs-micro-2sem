@@ -9,7 +9,7 @@
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - **Java 17**: Versão da linguagem de programação Java utilizada no projeto.
-- **Spring Boot 2.7.17**: Versão do Spring Boot utilizada no projeto.
+- **Spring Boot 3.0.6**: Versão do Spring Boot utilizada no projeto.
 
 ## Dependências
 O projeto utiliza as seguintes dependências, conforme especificadas no arquivo `pom.xml`:
