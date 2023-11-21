@@ -1,4 +1,4 @@
-#  Global Solution - Back-End - Microservice and Web Engineering Project
+#  Global Solution - Microservice and Web Engineering Project - Back-End
 
 ## Integrantes
 - Felipe Otto da Silva - RM: 89108
