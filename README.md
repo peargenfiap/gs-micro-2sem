@@ -25,6 +25,14 @@ O projeto utiliza as seguintes dependências, conforme especificadas no arquivo 
 - **Spring Boot Test**: Biblioteca de testes para aplicações Spring Boot.
 - **Springdoc OpenAPI UI**: Biblioteca para geração de documentação OpenAPI e UI.
 
+# Funcionamento da API
+## Endpoint para listar os **Objetivos**
+@GET -> /v1/objetivos/
+![image](https://github.com/peargenfiap/gs-micro-2sem/assets/115407377/c07eef79-3880-4421-946c-d17cf8f49b87)
+## Endpoint para listar os **Indicadores**
+@GET -> /v1/indicator/{id}
+![image](https://github.com/peargenfiap/gs-micro-2sem/assets/115407377/771e8369-b595-415b-8356-404e8ac45956)
+
 # Banco de Dados
 
 ## Modelo Físico
